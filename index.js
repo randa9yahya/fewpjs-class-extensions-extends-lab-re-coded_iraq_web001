@@ -6,34 +6,34 @@ class Polygon{
   get countSides(){
     return this.sideArr.length
   }
-  
+
   get perimeter(){
     let sum=0;
    for(let i=0; i<this.sideArr.length; i++){
-      sum += this.sideArr[i] 
+      sum += this.sideArr[i]
     }
     return sum
   }
- 
+
 }
 
 
 class Triangle extends Polygon{
-  
+
   get isValid(){
-    
+
     return (this.sideArr[0] + this.sideArr[1] > this.sideArr[2] && this.sideArr[0] + this.sideArr[2] > this.sideArr[1] && this.sideArr[2] + this.sideArr[1] > this.sideArr[0])
   }
 }
-    
+
 
 class Square extends Polygon{
-  
+
   get isValid(){
 
     return (this.sideArr[0]===this.sideArr[1] && this.sideArr[1]===this.sideArr[2] &&
     this.sideArr[2]===this.sideArr[3])
-    
+
   }
   get area(){
     return this.sideArr[0] * this.sideArr[0]
